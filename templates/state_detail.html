@@ -1,0 +1,42 @@
+{% extends 'common.html' %}
+{% block common %}
+<style>
+    #st{
+        color: green;
+        padding: 6px;
+    }
+</style>
+<table align="center">
+    <tr style="color: orangered;background-color: paleturquoise;font-size: 24px">
+        <th width="400" height="80" colspan="6">{{ data1 }}----{{ data2.statecode }}</th>
+    </tr>
+<tr style="color: coral;background-color:beige">
+    <th>Districts Name</th>
+    <th>Confirmed cases</th>
+    <th>Active cases</th>
+    <th>Recovered</th>
+    <th>Deceased</th>
+
+
+
+</tr>
+
+
+        {% for x,y in data2.districtData.items%}
+            <tr>
+                <th id="st">{{ x }}</th>
+            <th>{{ y.confirmed }}</th>
+            <th>{{ y.active }}</th>
+            <th>{{ y.recovered }}</th>
+            <th>{{ y.deceased }}</th>
+            </tr>
+
+    {% endfor %}
+<tr><th style="background-color: orange">Total Cases</th>
+<th style="background-color: cornflowerblue">{{ confirmed }}</th>
+<th style="background-color:orangered">{{ active }}</th>
+<th style="background-color: green">{{ recover }}</th>
+<th style="background-color:lightgoldenrodyellow">{{ deceased }}</th></tr>
+
+</table>
+{% endblock %}

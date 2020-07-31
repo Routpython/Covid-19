@@ -1,0 +1,25 @@
+{% extends 'common.html' %}
+<style>
+    #country{
+        color: red;
+
+    }
+    {% block common %}
+</style>
+<table align="center" border="0">
+    <tr style="color:orangered;background-color: lightskyblue">
+        <th><h2>States In India</h2></th>
+    </tr>
+        {% for x in data %}
+    <tr style="color: green;height: 23px">
+        <td>
+        <a href="{% url 'details' %}?state_detail={{ x }}">
+            {{ x }}
+        </a>
+        </td>
+    </tr>
+{% endfor %}
+
+
+</table>
+{% endblock %}

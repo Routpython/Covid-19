@@ -1,0 +1,18 @@
+{% extends 'common.html' %}
+
+{% block common %}
+
+<table align="center">
+
+        {% for a in data.districtData %}
+        <tr><th>{{ a }}</th>
+        </tr>
+{% endfor %}
+
+
+
+
+
+
+</table>
+{% endblock %}
